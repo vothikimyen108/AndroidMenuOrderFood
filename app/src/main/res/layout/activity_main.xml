@@ -15,9 +15,10 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="vertical">
+
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="64dp"
                 android:layout_weight="1"
                 android:background="#ab000d"
                 android:orientation="horizontal">
@@ -36,7 +37,7 @@
                     android:layout_weight="1"
                     android:text="Pizza"
                     android:textColor="#FFFFFF"
-                    android:textSize="40dp" />
+                    android:textSize="30dp" />
             </LinearLayout>
 
             <LinearLayout
@@ -52,13 +53,13 @@
                     android:layout_marginTop="10dp"
                     android:layout_weight="1"
                     android:orientation="vertical">
-
                     <CheckBox
                         android:id="@+id/themNam"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Thêm nấm"
                         android:textColor="#131212"
+                        android:checked="true"
                         android:textSize="18sp" />
 
                     <CheckBox
@@ -146,6 +147,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Pizza truyền thống"
+                            android:checked="true"
                             android:textSize="18sp" />
                     </RadioGroup>
                     <RadioGroup
@@ -164,6 +166,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Size Trung bình"
+                            android:checked="true"
                             android:textSize="18sp" />
                         <RadioButton
                             android:id="@+id/rbSizaNho"
@@ -181,16 +184,17 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:orientation="vertical">
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="61dp"
             android:layout_weight="1"
             android:background="#ab000d"
             android:orientation="horizontal">
 
             <ImageView
                 android:id="@+id/imageView2"
-                android:layout_width="74dp"
+                android:layout_width="85dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 app:srcCompat="@drawable/kisspng_bubble_tea_oolong_milk_green_tea_iced_tea_5acb363b231779_2658727815232671311438" />
@@ -204,7 +208,7 @@
                 android:layout_weight="1"
                 android:text="Trà Sữa"
                 android:textColor="#FFFFFF"
-                android:textSize="40dp" />
+                android:textSize="30dp" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -292,5 +296,93 @@
             </LinearLayout>
     </LinearLayout>
     </LinearLayout>
-    </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="300dp"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:layout_weight="1"
+                    android:lineSpacingExtra="30sp"
+                    android:text="Mã giảm giá:"
+                    android:textColor="#00BCD4"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:typeface="normal" />
+
+                <EditText
+                    android:id="@+id/editTextTextPersonName"
+                    android:layout_width="154dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ems="10" />
+            </LinearLayout>
+        </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Số tiền được giảm:"
+                    android:layout_marginBottom="10dp"
+                    android:textColor="#0E0E0E"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Tổng Tiền:"
+                    android:textColor="#0E0E0E"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btDatHang"
+                android:layout_width="150dp"
+                android:layout_height="60dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:text="Đặt hàng"
+                android:textSize="18sp"
+                app:backgroundTint="#0C0C0C" />
+
+            <Button
+                android:id="@+id/btLamlai"
+                android:layout_width="150dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:text="Làm lại"
+                android:textSize="18sp"
+                app:backgroundTint="#0B0A0A" />
+        </LinearLayout>
+     </LinearLayout>
+
+
 </LinearLayout>
