@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -83,7 +84,7 @@
                         android:layout_weight="1"
                         android:text="Số lượng"
                         android:textColor="#121111"
-                        android:textSize="24sp" />
+                        android:textSize="20dp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -126,6 +127,7 @@
                     android:layout_weight="1"
                     android:orientation="vertical">
                     <RadioGroup
+                        android:id ="@+id/rgLoai"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1" >
@@ -151,6 +153,7 @@
                             android:textSize="18sp" />
                     </RadioGroup>
                     <RadioGroup
+                        android:id ="@+id/rgSize"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1" >
@@ -229,6 +232,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Thêm Trân Châu"
+                    android:checked="true"
                     android:textColor="#000"
                     android:textSize="18sp" />
 
@@ -238,7 +242,6 @@
                     android:layout_height="wrap_content"
                     android:text="Thêm Thạch"
                     android:textSize="18sp" />
-
                 <CheckBox
                     android:id="@+id/themPudding"
                     android:layout_width="wrap_content"
@@ -280,7 +283,7 @@
                         app:backgroundTint="#8E0000" />
 
                     <EditText
-                        android:id="@+id/editTextNumber"
+                        android:id="@+id/editSoLuongTraSua"
                         android:layout_width="67dp"
                         android:layout_height="wrap_content"
                         android:ems="10"
@@ -296,15 +299,17 @@
             </LinearLayout>
     </LinearLayout>
     </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="46dp"
             android:layout_weight="1"
             android:orientation="vertical">
+
             <LinearLayout
                 android:layout_width="300dp"
-                android:layout_gravity="center"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_marginBottom="10dp"
                 android:layout_weight="1"
                 android:orientation="horizontal">
@@ -312,21 +317,20 @@
                 <TextView
                     android:id="@+id/textView2"
                     android:layout_width="wrap_content"
-                    android:layout_height="45dp"
+                    android:layout_height="50dp"
                     android:layout_weight="1"
                     android:lineSpacingExtra="30sp"
                     android:text="Mã giảm giá:"
-                    android:textColor="#00BCD4"
+                    android:textColor="#000"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     android:typeface="normal" />
 
                 <EditText
-                    android:id="@+id/editTextTextPersonName"
+                    android:id="@+id/edMaGiamGia"
                     android:layout_width="154dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:ems="10" />
+                    android:layout_weight="1" />
             </LinearLayout>
         </LinearLayout>
             <LinearLayout
@@ -334,10 +338,12 @@
                 android:layout_gravity="center"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:layout_marginLeft="10dp"
                 android:layout_marginBottom="10dp"
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/txtGiamGia"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -347,6 +353,7 @@
                     android:textSize="20sp" />
 
                 <TextView
+                    android:id="@+id/txtTong"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -360,13 +367,11 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_gravity="center"
-            android:layout_marginBottom="10dp"
             android:orientation="horizontal">
-
             <Button
                 android:id="@+id/btDatHang"
                 android:layout_width="150dp"
-                android:layout_height="60dp"
+                android:layout_height="50dp"
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
                 android:text="Đặt hàng"
@@ -376,7 +381,7 @@
             <Button
                 android:id="@+id/btLamlai"
                 android:layout_width="150dp"
-                android:layout_height="60dp"
+                android:layout_height="50dp"
                 android:layout_weight="1"
                 android:text="Làm lại"
                 android:textSize="18sp"
