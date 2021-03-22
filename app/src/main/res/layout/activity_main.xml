@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#ab000d"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="74dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/pngtreecheese_pizza_5615607" />
+
+                <TextView
+                    android:layout_width="270dp"
+                    android:layout_height="68dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:text="Pizza"
+                    android:textColor="#FFFFFF"
+                    android:textSize="40dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="276dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="201dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <CheckBox
+                        android:id="@+id/themNam"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Thêm nấm"
+                        android:textColor="#131212"
+                        android:textSize="18sp" />
+
+                    <CheckBox
+                        android:id="@+id/themPhoMai"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Thêm phô mai"
+                        android:textSize="18sp" />
+
+                    <CheckBox
+                        android:id="@+id/themXiuMai"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Thêm Xíu Mại"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1"
+                        android:text="Số lượng"
+                        android:textColor="#121111"
+                        android:textSize="24sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/truPizza"
+                            android:layout_width="50dp"
+                            android:layout_height="wrap_content"
+                            android:text="-"
+                            android:textSize="24sp"
+                            app:backgroundTint="#8E0000" />
+
+                        <EditText
+                            android:id="@+id/editSoLuongPizza"
+                            android:layout_width="67dp"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:inputType="number" />
+
+                        <Button
+                            android:id="@+id/tangPizaa"
+                            android:layout_width="50dp"
+                            android:layout_height="wrap_content"
+                            android:text="+"
+                            android:textSize="24sp"
+                            app:backgroundTint="#8E0000" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="201dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="@+id/traSua"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" >
+
+                        <RadioButton
+                            android:id="@+id/rbPizzaGa"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Pizza gà BBQ"
+                            android:textSize="18sp" />
+                        <RadioButton
+                            android:id="@+id/rbPizzaHaiSan"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Pizza hải sản"
+                            android:textSize="18sp" />
+                        <RadioButton
+                            android:id="@+id/rbPizzaTruyenThong"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Pizza truyền thống"
+                            android:textSize="18sp" />
+                    </RadioGroup>
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" >
+
+                        <RadioButton
+                            android:id="@+id/rbCoLon"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Size lớn"
+                            android:textSize="18sp" />
+                        <RadioButton
+                            android:id="@+id/rbSizeTrungBinh"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Size Trung bình"
+                            android:textSize="18sp" />
+                        <RadioButton
+                            android:id="@+id/rbSizaNho"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Size nhỏ"
+                            android:textSize="18sp" />
+                    </RadioGroup>
+                </LinearLayout>
+
+           </LinearLayout>
+        </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#ab000d"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="74dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/kisspng_bubble_tea_oolong_milk_green_tea_iced_tea_5acb363b231779_2658727815232671311438" />
+
+            <TextView
+                android:id="@+id/traSua"
+                android:layout_width="270dp"
+                android:layout_height="68dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:text="Trà Sữa"
+                android:textColor="#FFFFFF"
+                android:textSize="40dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="201dp"
+                android:layout_height="148dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/themTranChau"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Thêm Trân Châu"
+                    android:textColor="#000"
+                    android:textSize="18sp" />
+
+                <CheckBox
+                    android:id="@+id/themThach"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Thêm Thạch"
+                    android:textSize="18sp" />
+
+                <CheckBox
+                    android:id="@+id/themPudding"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Thêm Pudding"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="201dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="@+id/traSua"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:text="Số lượng"
+                    android:textColor="#2D2F31"
+                    android:textSize="24sp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/truTraSua"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:text="-"
+                        android:textSize="24sp"
+                        app:backgroundTint="#8E0000" />
+
+                    <EditText
+                        android:id="@+id/editTextNumber"
+                        android:layout_width="67dp"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="number" />
+                    <Button
+                        android:id="@+id/tangTraSua"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:text="+"
+                        android:textSize="24sp"
+                        app:backgroundTint="#8E0000" />
+                </LinearLayout>
+            </LinearLayout>
+    </LinearLayout>
+    </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
