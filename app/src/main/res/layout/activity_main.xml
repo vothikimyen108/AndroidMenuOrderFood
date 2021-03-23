@@ -60,7 +60,6 @@
                         android:layout_height="wrap_content"
                         android:text="Thêm nấm"
                         android:textColor="#131212"
-                        android:checked="true"
                         android:textSize="18sp" />
 
                     <CheckBox
@@ -228,7 +227,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Thêm Trân Châu"
-                    android:checked="true"
                     android:textColor="#000"
                     android:textSize="18sp" />
 
@@ -325,7 +323,7 @@
                 <EditText
                     android:id="@+id/edMaGiamGia"
                     android:layout_width="154dp"
-                    android:layout_height="match_parent"
+                    android:layout_height="50dp"
                     android:layout_weight="1"
                     android:inputType="text"
                     android:gravity="center"

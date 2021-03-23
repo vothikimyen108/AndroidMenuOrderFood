@@ -15,10 +15,12 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.DecimalFormat;
+
 public class MainActivity extends AppCompatActivity {
 
     int loaip = 0;
-    double priceP, priceTS;
+    double priceP, priceTS,priceLoai,priceSize,price=0;
     int countP, countTs;
     //khai bao bien
     CheckBox cbThemNam, cbThemPhomai, cbThemXiuMai, cbThemTranChau, cbThemThach, cbThemPudding;
@@ -35,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         CheckedChange();
         SoLuongPizza();
         SoLuongTraSua();
-        LamLai();
+
         DatHang();
         edMaGiamGia.addTextChangedListener(new TextWatcher() {
             @Override
@@ -53,8 +55,50 @@ public class MainActivity extends AppCompatActivity {
                 Price();
             }
         });
+        ChangeRB();
+        LamLai();
     }
-
+    private void ChangeRB() {
+        btSNho.setOnCheckedChangeListener(this::OnChangeRB);
+        btSLon.setOnCheckedChangeListener(this::OnChangeRB);
+        btSTrungBinh.setOnCheckedChangeListener(this::OnChangeRB);
+        btTruyenThong.setOnCheckedChangeListener(this::OnChangeRB);
+        btPGa.setOnCheckedChangeListener(this::OnChangeRB);
+        btPHaiSan.setOnCheckedChangeListener(this::OnChangeRB);
+    }
+    private void OnChangeRB(CompoundButton buttonView, boolean isCheck) {
+        int id = buttonView.getId();
+        if(isCheck){
+            switch(id) {
+                case R.id.rbSizaNho:
+                    priceSize =0;
+                    Price();
+                    break;
+                case R.id.rbCoLon:
+                    priceSize=50000;
+                    Price();
+                    break;
+                case R.id.rbSizeTrungBinh:
+                    priceSize =30000;
+                    Price();
+                    break;
+                case R.id.rbPizzaTruyenThong:
+                    priceLoai =0;
+                    Price();
+                    break;
+                case R.id.rbPizzaHaiSan:
+                    priceLoai =40000;
+                    Price();
+                    break;
+                case R.id.rbPizzaGa:
+                    priceLoai =30000;
+                    Price();
+                    break;
+                default:
+                    throw new IllegalStateException("Unexpected value: " + id);
+            }
+        }
+    }
 
     //mapping voi uisss
     private void AnhXa() {
@@ -156,25 +200,31 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     private void Price() {
-        double price = 0;
+        DecimalFormat formatter = new DecimalFormat("###,###,###");
         double totalPriceP = 0;
         double totalPriceTs = 0;
         double price1 = 140000, price2 = 45000;
         double dc = GiamGia();
         if(countP>0)
-            totalPriceP = (priceP+loaip+price1)*countP;
+            totalPriceP = (priceP+loaip+price1+priceLoai+priceSize)*countP;
         if(countTs>0)
             totalPriceTs = (priceTS+price2)*countTs;
         price = (totalPriceP+totalPriceTs);
-        txtsoTienDuocGiam.setText("Số tiền giảm: "+String.valueOf(dc*price));
-        txtTong.setText("Tổng hóa đơn: "+String.valueOf(Math.round(price*(1))));
-    }
+        if(price==0){
+            txtsoTienDuocGiam.setText("");
+            price=0;
+            txtTong.setText("");
+        }else{
+            txtsoTienDuocGiam.setText("Số tiền giảm: "+String.valueOf(formatter.format(dc*price))+" vnd");
+            txtTong.setText("Tổng hóa đơn: "+String.valueOf(formatter.format(Math.round(price*(1-dc))))+" vnd");
+        }
+     }
     private double GiamGia() {
         double dc =0;
-            String dis = edMaGiamGia.getText().toString().toLowerCase();
-            if (dis.equals("EnCute"))
+            String dis = edMaGiamGia.getText().toString().toUpperCase();
+            if (dis.equals("ENCUTE"))
                 dc = 0.2;
-            else if (dis.equals("108")) {
+            else if (dis.equals("EN108")) {
                 dc = 0.5;
             } else dc = 0;
         return dc;
@@ -225,7 +275,6 @@ public class MainActivity extends AppCompatActivity {
         btLamLai.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Price();
                 cbThemNam.setChecked(false);
                 cbThemPhomai.setChecked(false);
                 cbThemThach.setChecked(false);
@@ -234,15 +283,17 @@ public class MainActivity extends AppCompatActivity {
                 cbThemXiuMai.setChecked(false);
                 btPGa.setChecked(false);
                 btPHaiSan.setChecked(false);
-                btTruyenThong.setChecked(false);
-                btSNho.setChecked(false);
+                btTruyenThong.setChecked(true);
+                btSNho.setChecked(true);
                 btSTrungBinh.setChecked(false);
                 btSLon.setChecked(false);
                 edSLTraSua.setText("0");
                 edSLPizza.setText("0");
-                txtsoTienDuocGiam.setText("");
-                txtTong.setText("");
                 edMaGiamGia.setText("  ");
+                price = 0;
+                countP =0;
+                countTs =0;
+                Price();
             }
         });
     }
@@ -250,7 +301,7 @@ public class MainActivity extends AppCompatActivity {
         btDatHangNgay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Price();
+
                 Toast.makeText(getApplicationContext(),"Đặt hàng thành công!!!",Toast.LENGTH_LONG).show();
             }
         });
